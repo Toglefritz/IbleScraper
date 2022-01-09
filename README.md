@@ -1,4 +1,4 @@
-<img src="https://github.com/Toglefritz/IbleScraper/blob/main/images/iblescraper_logo.PNG?raw=true" alt="IbleScraper logo" width="300"/>
+<img src="https://github.com/Toglefritz/IbleScraper/blob/main/images/iblescraper_logo.PNG?raw=true" alt="IbleScraper logo" width="600"/>
 
 # IbleScraper
 A Python web scraper to extract lists of projects from Instructables.com category/channel pages.
