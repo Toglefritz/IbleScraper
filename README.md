@@ -26,7 +26,11 @@ The tool will populate a list of channels under the category you just selected. 
 
 <img src="https://github.com/Toglefritz/IbleScraper/blob/main/images/iblescraper_screenshot_3.PNG?raw=true" alt="IbleScraper screenshot" width="500"/>
 
-Once you enter a channel, IbleScraper will get right down to business gathering a list of project titles under your selected category/channel pair. Once it is done (and it should only take a moment), the script will create a text file in the same directory as the script containing the list of titles.
+After selecting a channel, you will be asked to enter a number of pages for the selected category/channel to scape. The script will look at each page and get the titles.
+
+<img src="https://github.com/Toglefritz/IbleScraper/blob/main/images/iblescraper_screenshot_4.PNG?raw=true" alt="IbleScraper screenshot" width="500"/>
+
+Once you enter parameters for each of the three prompts, IbleScraper will get right down to business gathering a list of project titles under your selected category/channel pair. Once it is done (and it should only take a moment), the script will create a text file in the same directory as the script containing the list of titles.
 
 <img src="https://github.com/Toglefritz/IbleScraper/blob/main/images/iblescraper_screenshot_4.PNG?raw=true" alt="IbleScraper screenshot" width="500"/>
 
