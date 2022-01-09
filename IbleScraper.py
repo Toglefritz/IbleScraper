@@ -71,6 +71,8 @@ while True:
         # Create a space between columns so they all line up
         space = '   '
         x = 0
+        # The right column items should all start on the 26th character so we add spaces
+        # to any item in the left column under 26 characters to make this true
         while x < (26 - len(leftColumn[i])):
             space += ' '
             x += 1
@@ -89,28 +91,49 @@ while True:
         # We will only accept the listed categories
         print('\nPlease select one of the listed channels. This just will not work otherwise.\n')
 
-# TODO add option to select how many pages to scrape  
+# Ask the user to input a number of pages to scrape
+while True:
+    pagesPromptText = 'Finally, how many pages would you like to scrape?\n(enter a number 1-100):  ' 
+    pagesChoice = input(pagesPromptText)
+    if(int(pagesChoice) > 1 & int(pagesChoice) < 100):
+        print('We will take a look at ' + pagesChoice + ' pages.\nLet\'s get started.\n')
+        break
+    else:
+        print('Please enter a number of pages between 1 and 100.\n')
 
-# Get the content 
-url = 'https://www.instructables.com/' + categoryChoice.lower() + '/' + channelChoice.lower() + '/projects/'
-print('Getting projects under ' + categoryChoice + '/' + channelChoice + '.\nURL: ' + url + '\n')  
-session = HTMLSession()
-r = session.get(url)
+# This is a list of titles for the Instructables in this category/channel
+# This list is essentially the output of the script as it will be written
+# directly into the output text file
+ibles = [] 
 
-# We will scape the website using Beautiful Soup
-soup = BeautifulSoup(r.text, 'html.parser')
+# We will loop to repeat the process for each page
+page = 0
+while page < int(pagesChoice):
+    # Get the content for the current page
+    url = 'https://www.instructables.com/' + categoryChoice.lower() + '/' + channelChoice.lower() + '/projects/'
+    # For pages after page 1, append the page number to the URL
+    if page > 1:
+        url += ('?page=' + str(page))
+    print('Getting projects under ' + categoryChoice + '/' + channelChoice + '.\nURL: ' + url + '\n')  
+    session = HTMLSession()
+    r = session.get(url)
 
-# First get all the project titles for this cateogry/channel
-titles = soup.find_all("a", {"class": "ible-title"})
+    # We will scape the website using Beautiful Soup
+    soup = BeautifulSoup(r.text, 'html.parser')
 
-# Second, create a list of all these titles
-ibles = [] # A list of titles for the Instructables in this category/channel
-for title in titles:
-    ibles.append(str(title.text))
+    # First get all the project titles for this cateogry/channel
+    titles = soup.find_all("a", {"class": "ible-title"})
+
+    # Second, create a list of all these titles
+    for title in titles:
+        ibles.append(str(title.text))
+
+    # Go to the next page
+    page += 1
 
 # Third, create a file containing the output of the scraper (a list of project titles)
 fileName = 'iblescraper_' + categoryChoice.lower() + '_' + channelChoice.lower() + '.txt'
-with open(fileName, "w") as txt_file:
+with open(fileName, "w", encoding='utf8', errors="ignore") as txt_file:
     for title in ibles:
         txt_file.write(title + "\n")
 

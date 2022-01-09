@@ -84,14 +84,26 @@ After this column business, the rest of the process is the same as it was for th
 
 <img src="https://github.com/Toglefritz/IbleScraper/blob/main/images/code_screenshot_6.PNG?raw=true" alt="IbleScraper code" width="500"/>
 
+Then we are on to the last user input before the script gets started with generating the list of project titles. The script will ask the user for the number of pages to scrape, accepting a number of pages between 1 and 100. This prompt is very simple because there is no advanced logic involved. The script simply displays a prompt and validates that the entry is between 1 and 100.
+
+<img src="https://github.com/Toglefritz/IbleScraper/blob/main/images/code_screenshot_12.PNG?raw=true" alt="IbleScraper code" width="500"/>
+
 ### Chaper 2: Get the page from Instructables.com
-Once the user has selected a category and channel, the next step is to obtain the HTML markup for the corresponding page. The category/channel pages on Instructables.com look like this:
+Once the user has selected a category and channel, the next step is to obtain the HTML markup for the corresponding category/channel pages for each page the user decided to scrape. The category/channel pages on Instructables.com look like this for the first page:
 
 ```https://www.instructables.com/<category>/<channel>/projects/```
+
+And for pages after the first one, the page number gets appended to the end of the URL like this:
+
+```https://www.instructables.com/<category>/<channel>/projects/?page=<page number>```
 
 So, we build the URL string and then perform a simple GET REST request to that URL to get the content of that page.
 
 <img src="https://github.com/Toglefritz/IbleScraper/blob/main/images/code_screenshot_7.PNG?raw=true" alt="IbleScraper code" width="500"/>
+
+The whole process of building the URL, getting the BeautifulSoup object for the current page, and scraping that page to extract a list of project titles is repeated for each page.
+
+<img src="https://github.com/Toglefritz/IbleScraper/blob/main/images/code_screenshot_13.PNG?raw=true" alt="IbleScraper code" width="500"/>
 
 ### Chaper 3: Parse the HTML
 With the HTML document in hand, the next step is to parse out the project titles. To parse the HTML, we will use a tool called [BeautifulSoup]("https://www.dataquest.io/blog/web-scraping-python-using-beautiful-soup/") (which is an amazing name). We will start by creating a BeautifulSoup object from the HTML.
