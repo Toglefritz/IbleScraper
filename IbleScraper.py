@@ -139,7 +139,7 @@ ibles = []
 page = 0
 while page < int(pagesChoice):
     # Get the content for the current page
-    url = 'https://www.instructables.com/' + categoryChoice.lower() + '/' + channelChoice.lower() + '/projects/'
+    url = 'https://www.instructables.com/' + categoryChoice.lower().replace(' ', '-') + '/' + channelChoice.lower().replace(' ', '-') + '/projects/'
     # Add the sorting choice to the URL (Featured does not add anything though)
     if sortingChoice != "Featured":
         url += sortingChoice.lower() + '/'
@@ -164,7 +164,7 @@ while page < int(pagesChoice):
     page += 1
 
 # Third, create a file containing the output of the scraper (a list of project titles)
-fileName = 'iblescraper_' + categoryChoice.lower() + '_' + channelChoice.lower() + '_' + sortingChoice.lower() + '.txt'
+fileName = 'iblescraper_' + categoryChoice.lower().replace(' ', '-') + '_' + channelChoice.lower().replace(' ', '-') + '_' + sortingChoice.lower() + '.txt'
 with open(fileName, "w", encoding='utf8', errors="ignore") as txt_file:
     for title in ibles:
         txt_file.write(title + "\n")
