@@ -95,7 +95,7 @@ while True:
 while True:
     pagesPromptText = 'Finally, how many pages would you like to scrape?\n(enter a number 1-100):  ' 
     pagesChoice = input(pagesPromptText)
-    if(int(pagesChoice) > 1 & int(pagesChoice) < 100):
+    if(int(pagesChoice) >= 1 & int(pagesChoice) < 100):
         print('We will take a look at ' + pagesChoice + ' pages.\nLet\'s get started.\n')
         break
     else:
