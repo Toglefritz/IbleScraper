@@ -33,6 +33,9 @@ channels = {
     "Outside": ["Backyard", "Beach", "Bikes", "Birding", "Boats", "Camping", "Climbing", "Fire", "Fishing", "Hunting", "Kites", "Knots", "Launchers", "Paracord", "Rockets", "Siege Engines", "Skateboard", "Snow", "Sports", "Survival", "Water"], 
 }
 
+# Sorting methods (ordered from highest/most to lowest/least for reach method)
+methods = ["Featured", "Recent", "Popular", "Views", "Winners"]
+
 # Ask the user to choose a category
 while True:
     categoryPromptText = 'Let\'s start by choosing one of these categories, please:\n'
@@ -40,6 +43,7 @@ while True:
     for key in channels:
         categoryPromptText += '   ' + key + '\n'
     categoryPromptText += '\n(type in the category):  '
+
     categoryChoice = input(categoryPromptText)
     if categoryChoice in channels:
             print('\nYou selected the ' + categoryChoice + ' category. Good choice.\n')
@@ -91,6 +95,31 @@ while True:
         # We will only accept the listed categories
         print('\nPlease select one of the listed channels. This just will not work otherwise.\n')
 
+# Ask the user to select a sorting order for the projects
+while True:
+    sortingPromptText = 'Next, please select a sorting method for the results (highest/most to lowest/least):\n'
+    for method in methods:
+        sortingPromptText += '   ' + method + '\n'
+    sortingPromptText += '\n(type in the sorting method):  '
+
+    sortingChoice = input(sortingPromptText)
+    if sortingChoice in methods:
+        if sortingChoice == "Featured":
+            print('\nThe results will be sorted from most recently featured to least recently featured.\n')
+        elif sortingChoice == "Recent":
+            print('\nThe results will be sorted from newest to oldest.\n')
+        elif sortingChoice == "Popular":
+            print('\nThe results will be sorted in order of popularity.\n')
+        elif sortingChoice == "Views":
+            print('\nThe results will be sorted in order of views.\n')
+        elif sortingChoice == "Winners":
+            print('\nThe results will be sorted from most recent winners to least recent winners.\n')
+        # If the entry is valid, break from the loop
+        break
+    else:
+        # We will only accept the listed categories
+        print('\nPlease select one of the listed sorting methods. I don\'t know how to sort in any other ways.\n')
+
 # Ask the user to input a number of pages to scrape
 while True:
     pagesPromptText = 'Finally, how many pages would you like to scrape?\n(enter a number 1-100):  ' 
@@ -111,6 +140,9 @@ page = 0
 while page < int(pagesChoice):
     # Get the content for the current page
     url = 'https://www.instructables.com/' + categoryChoice.lower() + '/' + channelChoice.lower() + '/projects/'
+    # Add the sorting choice to the URL (Featured does not add anything though)
+    if sortingChoice != "Featured":
+        url += sortingChoice.lower() + '/'
     # For pages after page 1, append the page number to the URL
     if page > 1:
         url += ('?page=' + str(page))

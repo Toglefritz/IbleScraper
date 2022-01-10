@@ -26,7 +26,11 @@ The tool will populate a list of channels under the category you just selected. 
 
 <img src="https://github.com/Toglefritz/IbleScraper/blob/main/images/iblescraper_screenshot_3.PNG?raw=true" alt="IbleScraper screenshot" width="500"/>
 
-After selecting a channel, you will be asked to enter a number of pages for the selected category/channel to scape. The script will look at each page and get the titles.
+There are several ways the Instructables on the category/channel page can be sorted. The next prompt asks you to select one.
+
+<img src="https://github.com/Toglefritz/IbleScraper/blob/main/images/iblescraper_screenshot_6.PNG?raw=true" alt="IbleScraper screenshot" width="500"/>
+
+After selecting a sorting method, you will be asked to enter a number of pages for the selected category/channel to scape. The script will look at each page and get the titles.
 
 <img src="https://github.com/Toglefritz/IbleScraper/blob/main/images/iblescraper_screenshot_5.PNG?raw=true" alt="IbleScraper screenshot" width="500"/>
 
@@ -87,6 +91,18 @@ Here's how we do this. For each row in the list, we want the right column to sta
 After this column business, the rest of the process is the same as it was for the category selection. We make sure that the text the user enters is within the list of channels.
 
 <img src="https://github.com/Toglefritz/IbleScraper/blob/main/images/code_screenshot_6.PNG?raw=true" alt="IbleScraper code" width="500"/>
+
+There are several different methods that can be used to sort the Instructables on the selected category/channel page. The next user input prompt allows the user to select one of these sorting methods. This prompt is built in much the same way as the category and channel pages. At the top of the script, there is a list containing the sorting options available.
+
+<img src="https://github.com/Toglefritz/IbleScraper/blob/main/images/code_screenshot_14.PNG?raw=true" alt="IbleScraper code" width="500"/>
+
+IbleScraper constructs the sorting prompt by looping through this list.
+
+<img src="https://github.com/Toglefritz/IbleScraper/blob/main/images/code_screenshot_15.PNG?raw=true" alt="IbleScraper code" width="500"/>
+
+And then, just like with the other prompt, the script verifies the the input is actually in the list of sorting options before breaking out of the input loop. The confirmation message the app presents for a valid input changes depending upon the chosen sorting method.
+
+<img src="https://github.com/Toglefritz/IbleScraper/blob/main/images/code_screenshot_16.PNG?raw=true" alt="IbleScraper code" width="500"/>
 
 Then we are on to the last user input before the script gets started with generating the list of project titles. The script will ask the user for the number of pages to scrape, accepting a number of pages between 1 and 100. This prompt is very simple because there is no advanced logic involved. The script simply displays a prompt and validates that the entry is between 1 and 100.
 

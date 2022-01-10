@@ -1,0 +1,60 @@
+Remote Control Light Switch
+Arduino With Dual Motor Tank Coded in TinkerCad Codeblocks and L293D Driver Chip
+ Fully Functional (non-violent) Squid Games Doll Using Arduino UNO
+Arduino Powered Pattern Making Machine
+Physical Buttons for Zoom
+Arduino Secret Stash Chocolate Box with Easyvr3 and Servos
+Laser Anemometer
+Euclidean Rhythm Drum or Synth Sequencer Module
+Do a MIDI Controller Yourself
+Sentimental Audio Gift
+Aetherharp: Three Level, 24 Note, MIDI Air-harp.
+Ultimate Kids Musicbox ESP32 Based
+Dumbledore's Deluminator A.k.a the Put-Outer
+Stubborn Alarm - Doesn't Stop Until You Brush Your Teeth
+Complete Arduino-based 3D-printed Battery-powered Mini Retro Arcade Machine 
+An Alarm Clock (but It Is Harder to Turn Off)
+TELEKING -  the Robotic-puppet Chicken (3D PRINTER FREE)
+How to Make a News Station Inside a Retro Mini TV
+Scan View-Master Reels to Digital Video. Its the View-ReMaster!
+Leader-Follower Robot Legs (Lesson 2)
+3D Printed Optical Telegraph Model
+3D Printed Robotics Development Platform With Nvidia Jetson Nano
+EB9 - a Platform for Learning Electronics, Arduino and Robotics.
+Polar CNC Pen Plotter & Laser Engraver
+Uncanny Eye Pendant With ESP8266 and TFT Display for Halloween
+Kerbal Controller - the Basics
+RoboTray
+Make Your Own RGB Ring Light Glasses
+3018 CNC Machine Upgrade to 5050 CNC Machine
+D.I.Y 3-Axis Polar CNC Machine
+How to Turn Any Drone Into a Delivery Drone📦
+3D Printed Mini Air Kooler (the OverEngineered Edition)
+Water Rocket - Electronic Systems Design
+RGB LED Etch-A-Sketch
+Educational Child's Toy
+BHARAT RGB Version 1.0 
+Servo Creature (Lesson 1)
+LED-driven, Laser Cut Settlers of Catan Board
+Table Tennis Bat With Machine Learning AI (Arduino Nano 33 BLE Sense + TensorFlow Micro)
+Smart Thermometer Using Esp-01F and Web Socket [Arduino IDE]
+Cyborg Hand : Robotic-cum-Prosthetic Servo Powered Hand
+Arduino NERF Ball Wireless FPV Sentry Turret
+3D Printed Holo Clock With Arduino
+Electronic Arrow Spine Tester
+GRBL Based Coil Winder From Water Pipe
+Xyluino - an Arduino Driven MIDI Marimba, Xylophone, Glockenspiel
+PECS Communication Board
+Arduino Cable Tracer
+Cheapest Plug & Play Room Automation Setup
+Miter Saw Measuring Device
+Artificial Candle Ignited by Real Flame
+Homemade CNC Machine From DC Servo Motors and Wooden Wine Boxes
+Differential Thermal Analysis Using Arduino and PhyPhox
+Arduino_GFX
+Deej - a Physical Volume Mixer
+Floating and Spinning Earth Globe
+Arduino M&M Color Sorter
+Reverse Engineered Bumper Sensor Campsite Security Alarm
+PALPi Retro Game Console
+DIY Non Contact IR Thermometer V1.0
